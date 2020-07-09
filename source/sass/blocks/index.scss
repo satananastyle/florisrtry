@@ -1,0 +1,31 @@
+.index {
+  padding-top: 160px;
+
+  .button {
+    margin-bottom: 30px;
+  }
+}
+
+.index__item {
+  display: block;
+  margin-bottom: 30px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.09em;
+
+  opacity: 0.5;
+
+@include font(35, 39);
+
+@include not-hover;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+
+@include hover;
+
+@include font(45, 50);
+  }
+}

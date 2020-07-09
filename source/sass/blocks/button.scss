@@ -1,0 +1,84 @@
+.button {
+  display: inline-block;
+  padding: 19px 30px 16px;
+
+  vertical-align: middle;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  background-color: transparent;
+  border: 1px solid white;
+
+@include font(12, 13);
+
+@include font-family;
+
+@include not-hover;
+
+  &:hover,
+  &:focus {
+    color: black;
+
+    background-color: white;
+
+@include hover;
+  }
+
+  &--black {
+    background-color: #010001;
+    border-color: transparent;
+  }
+
+  &--brown {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  @media(max-width: $desktop-min-width - 1) {
+    padding: 22px 40px 21px;
+
+@include font(15, 17);
+  }
+
+  @media(max-width: $tablet-width - 1) {
+    padding: 16px 30px 14px;
+
+@include font(10, 11);
+  }
+}
+
+.button-navigation {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+
+  vertical-align: middle;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url("../img/svg/button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid white;
+  border-radius: 50%;
+
+@include font(0, 0);
+
+@include not-hover;
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+
+@include hover;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+

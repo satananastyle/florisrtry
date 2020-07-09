@@ -1,0 +1,22 @@
+@mixin font-family {
+  font-weight: normal;
+  font-family: "Forum", "Times New Roman", serif;
+}
+
+@mixin font($size, $line-height) {
+  font-size: $size * 1px;
+  line-height: $line-height * 1px;
+}
+
+@mixin hover {
+  outline: none;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+@mixin not-hover {
+  &:not(:hover) {
+    transition: 0.3s;
+  }
+}

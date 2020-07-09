@@ -1,0 +1,106 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+
+  font-family: "Forum", "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  // justify-content: space-between;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  color: white;
+
+//overflow-wrap: anywhere;
+
+  background-color: $background;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  &.no-scroll {
+    max-height: 100%;
+    padding-right: 17px;
+    overflow: hidden;
+  }
+
+  &.no-scroll-ios {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+input,
+textarea,
+select {
+  border-radius: 0;
+  box-shadow: none;
+
+  -webkit-appearance: none;
+}
+
+input:invalid {
+  outline: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1510px;
+  margin: 0 auto;
+  padding: 0 205px;
+}
