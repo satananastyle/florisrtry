@@ -29,11 +29,13 @@
         768: {
           slidesPerView: 2,
           spaceBetween: 28,
+          slidesPerGroup: 2,
         },
 
         320: {
           slidesPerView: 1,
           spaceBetween: 30,
+          slidesPerGroup: 1,
         },
       }
     });
