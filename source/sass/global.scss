@@ -3,6 +3,8 @@ html {
   height: 100%;
 
   font-family: "Forum", "Times New Roman", serif;
+
+  scroll-behavior: smooth;
 }
 
 *,
@@ -26,8 +28,7 @@ body {
   font-size: 16px;
   line-height: 1.2;
   color: white;
-
-//overflow-wrap: anywhere;
+  //overflow-wrap: anywhere;
 
   background-color: $background;
 

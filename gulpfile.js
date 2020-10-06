@@ -1,20 +1,21 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const minify = require('gulp-csso');
+const server = require('browser-sync');
 const rename = require('gulp-rename');
-const server = require('browser-sync').create();
+const minify = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
+const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
 const svgstore = require('gulp-svgstore');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
-const run = require('run-sequence');
-const del = require('del');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const sourcemaps = require('gulp-sourcemaps');
+const cache = require('gulp-cache');
+const pngquant = require('imagemin-pngquant');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
 
 gulp.task('html', () => gulp.src('source/*.html')
   .pipe(posthtml([
@@ -27,9 +28,7 @@ gulp.task('style', () => gulp.src('source/sass/style.scss')
   .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(sass())
-  .pipe(postcss([
-    autoprefixer()
-  ]))
+  .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
   .pipe(gulp.dest('docs/css'))
   .pipe(minify())
   .pipe(rename('style.min.css'))
@@ -38,17 +37,11 @@ gulp.task('style', () => gulp.src('source/sass/style.scss')
   .pipe(server.stream())
 );
 
-gulp.task('js', () => gulp.src(['source/js/**/*.js', '!source/js/plugins/*.js'])
-  .pipe(plumber())
-  .pipe(concat('main.js'))
-  .pipe(gulp.dest('docs/js/'))
-);
-
-gulp.task('jsPlugins', () => gulp.src(['source/js/plugins/*.js'])
-  .pipe(plumber())
-  .pipe(concat('vendor.js'))
-  .pipe(gulp.dest('docs/js/'))
-);
+gulp.task('scripts', function () {
+  return gulp.src('./source/js/main.js')
+    .pipe(webpackStream(webpackConfig), webpack)
+    .pipe(gulp.dest('./docs/'));
+});
 
 gulp.task('json', () => gulp.src('source/json/*.json')
   .pipe(plumber())
@@ -56,11 +49,12 @@ gulp.task('json', () => gulp.src('source/json/*.json')
 );
 
 gulp.task('images', () => gulp.src('source/img/**/*.{gif,png,jpg,svg}')
-  .pipe(imagemin([
-    imagemin.optipng({optimizationLevel: 3}),
-    imagemin.jpegtran({progressive: true}),
-    imagemin.svgo()
-  ]))
+  .pipe(cache(imagemin({ // Сжимаем их с наилучшими настройками
+    interlaced: true,
+    progressive: true,
+    svgoPlugins: [{ removeViewBox: false }],
+    use: [pngquant()]
+  })))
   .pipe(gulp.dest('docs/img/'))
 );
 
@@ -101,7 +95,8 @@ gulp.task('serve', () => {
   gulp.watch('source/img/sprite/*.svg', gulp.series('sprite'));
   gulp.watch('source/sass/**/*.scss', gulp.series('style'));
   gulp.watch('source/**/*.html', gulp.series('html')).on('change', server.reload);
-  gulp.watch('source/js/**/*.js', gulp.series('jsPlugins', 'js')).on('change', server.reload);
+  gulp.watch('source/js/**/*.js', gulp.series('scripts')).on('change', server.reload);
+
 });
 
-gulp.task('docs', gulp.series('clean', 'images', 'sprite', 'copy', 'style', 'html', 'js', 'json', 'jsPlugins'));
+gulp.task('docs', gulp.series('clean', 'images', 'sprite', 'copy', 'style', 'html', 'scripts', 'json'));

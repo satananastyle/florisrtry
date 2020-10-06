@@ -1,14 +1,26 @@
-.DS_Store
-.idea
-.vscode
 package-lock.json
 *.ai
-*.log
 *.pdf
 *.psd
 *.sublime*
-node_modules/
-npm-debug.*
+
 source/css/*.css
 source/css/*.map
+
+# Файлы и папки операционной системы
+.DS_Store
 Thumbs.db
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Вспомогательные файлы
+*.log*
+node_modules/
+npm-debug.*
+
+# Папка с собранными файлами проекта
+public/bundle.js
+public/bundle.js.map
