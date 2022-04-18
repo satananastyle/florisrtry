@@ -1349,11 +1349,6 @@ input:invalid {
     padding: 30px 20px; }
     .service__container button {
       margin-bottom: 50px; }
-  .service__swiper-container {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    padding: 0; }
   .service__gallery {
     overflow: visible; } }
 
