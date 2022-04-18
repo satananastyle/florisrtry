@@ -17682,12 +17682,10 @@ const initMainSlider = () => {
 
     catalogPagination.style.display = `flex`;
     isActive = true;
-  } else if (catalogList.length >= 3) {
-
-    if (document.body.clientWidth < `1024`) {
-      mainSlider.init();
-      isActive = true;
-    }
+  } else if (catalogList.length > 4) {
+    catalogPagination.style.display = `flex`;
+    mainSlider.init();
+    isActive = true;
   }
 
   window.addEventListener(`resize`, function () {
@@ -17702,7 +17700,7 @@ const initMainSlider = () => {
     }
 
     if (document.body.clientWidth > '1380') {
-      if (isActive) {
+      if (isActive && catalogList.length <= 4) {
         mainSlider.destroy(false, true);
         catalogPagination.removeAttribute(`style`);
         isActive = false;
