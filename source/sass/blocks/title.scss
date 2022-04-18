@@ -9,23 +9,8 @@
     margin-bottom: 50px;
 
     letter-spacing: 0.09em;
-@include font(50, 55);
 
-    @media (max-width: 1280px) {
-      margin-bottom: 30px;
-
-@include font(30, 33);
-    }
-
-    @media (max-width: $desktop-min-width - 1) {
-      margin-bottom: 30px;
-
-@include font(40, 44);
-    }
-
-    @media (max-width: $tablet-width - 1) {
-      @include font(20, 22);
-    }
+    @include font(50, 55);
   }
 
   &--section {
@@ -33,10 +18,32 @@
 
     letter-spacing: 0.06em;
 
-@include font(30, 33);
+    @include font(30, 33);
+  }
+}
 
-    @media (max-width: $tablet-width - 1) {
-      @include font(20, 22);
-    }
+@media (max-width: 1280px) {
+  .title--main {
+    margin-bottom: 30px;
+
+    @include font(30, 33);
+  }
+}
+
+@media (max-width: $desktop-min-width) {
+  .title--main {
+    margin-bottom: 30px;
+
+    @include font(40, 44);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .title--main {
+    @include font(20, 22);
+  }
+
+  .title--section {
+    @include font(20, 22);
   }
 }

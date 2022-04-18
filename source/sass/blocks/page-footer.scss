@@ -8,15 +8,6 @@
   padding: 21px 30px;
 
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-  @media(max-width: $desktop-min-width - 1) {
-    max-width: 90%;
-    padding: 40px 21px;
-  }
-
-  @media(max-width: $desktop-min-width - 1) {
-    padding: 30px 15px;
-  }
 }
 
 .page-footer__navigation {
@@ -27,40 +18,50 @@
   min-width: 994px;
   margin-bottom: 30px;
 
-  @media(max-width: $desktop-min-width - 1) {
-    flex-direction: column;
-    min-width: fit-content;
-    margin-bottom: 20px;
-  }
-
-  @media(max-width: $tablet-width - 1) {
-    margin-bottom: 15px;
-  }
-
   a {
     text-decoration: none;
 
     opacity: 0.5;
 
-@include font(16, 18);
-
-@include not-hover;
+    @include font(16, 18);
+    @include hover;
 
     &:hover,
     &:focus {
       opacity: 1;
-
-@include hover;
     }
+  }
+}
 
-    @media(max-width: $desktop-min-width - 1) {
+@media (max-width: $desktop-min-width) {
+  .page-footer {
+    max-width: 94%;
+    padding: 40px 21px;
+  }
+
+  .page-footer__navigation {
+    flex-direction: column;
+    min-width: fit-content;
+    margin-bottom: 20px;
+
+    a {
       margin-bottom: 20px;
 
       @include font(20, 22);
     }
+  }
+}
 
-    @media(max-width: $tablet-width - 1) {
-      margin-bottom: 15px;
+@media (max-width: $tablet-width) {
+  .page-footer {
+    padding: 30px 15px;
+  }
+
+  .page-footer__navigation {
+    margin-bottom: 15px;
+
+    a {
+      margin-bottom: 11px;
 
       @include font(16, 18);
     }

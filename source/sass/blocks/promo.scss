@@ -7,29 +7,9 @@
   margin: 0 auto;
   padding: 7.2% 30px;
 
-  @media(max-width: $desktop-min-width - 1) {
-    flex-direction: column;
-    padding: 50px 40px 100px;
-  }
-
-  @media(max-width: $tablet-width - 1) {
-    padding: 50px 15px 100px;
-  }
-
   img {
     width: 56%;
     height: auto;
-
-    @media(max-width: $desktop-min-width - 1) {
-      order: -1;
-      width: 80%;
-      margin-bottom: 30px;
-    }
-
-    @media(max-width: $tablet-width - 1) {
-      width: 100%;
-      margin-bottom: 25px;
-    }
   }
 }
 
@@ -39,16 +19,6 @@
   align-items: flex-start;
   width: 30%;
 
-  @media(max-width: $desktop-min-width - 1) {
-    align-items: center;
-    width: 80%;
-  }
-
-  @media(max-width: $tablet-width - 1) {
-    align-items: flex-start;
-    width: 100%;
-  }
-
   h2 {
     position: relative;
 
@@ -56,21 +26,6 @@
     padding-bottom: 17px;
 
     line-height: 170%;
-
-    @media(max-width: $desktop-min-width - 1) {
-      width: fit-content;
-      margin: 0 auto 40px;
-
-      text-align: center;
-    }
-
-    @media(max-width: $tablet-width - 1) {
-      width: 50%;
-      margin-bottom: 20px;
-      margin-left: 0;
-
-      text-align: left;
-    }
 
     &::after {
       content: "";
@@ -83,14 +38,6 @@
       height: 1px;
 
       background-color: white;
-
-      @media(max-width: $desktop-min-width - 1) {
-        left: 30%;
-      }
-
-      @media(max-width: $tablet-width - 1) {
-        left: 0;
-      }
     }
   }
 
@@ -100,14 +47,83 @@
 
     font-size: 14px;
     line-height: 170%;
+  }
+}
 
-    @media(max-width: $desktop-min-width - 1) {
+@media (max-width: $desktop-min-width) {
+  .promo {
+    flex-direction: column;
+    width: 453px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 44px;
+    padding: 7.2% 0;
+
+    img {
+      order: -1;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .promo__container {
+    align-items: center;
+    width: 100%;
+
+    h2 {
+      width: fit-content;
+      margin: 0 auto 40px;
+
+      text-align: center;
+
+      &::after {
+        left: 40%;
+
+        width: 20%;
+      }
+    }
+
+    p {
       margin-bottom: 15px;
 
       text-align: center;
     }
 
-    @media(max-width: $tablet-width - 1) {
+    button {
+      padding: 16px 35px;
+
+      @include font(11, 12);
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .promo {
+    margin-bottom: 5px;
+    padding: 50px 15px 100px;
+
+    img {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+  .promo__container {
+    align-items: flex-start;
+    width: 100%;
+
+    h2 {
+      width: 50%;
+      margin-bottom: 20px;
+      margin-left: 0;
+
+      text-align: left;
+
+      &::after {
+        left: 0;
+      }
+    }
+
+    p {
       margin-bottom: 40px;
 
       text-align: left;

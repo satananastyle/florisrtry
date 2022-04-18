@@ -11,19 +11,15 @@
   background-color: transparent;
   border: 1px solid white;
 
-@include font(12, 13);
-
-@include font-family;
-
-@include not-hover;
+  @include font(12, 13);
+  @include font-family;
+  @include hover;
 
   &:hover,
   &:focus {
     color: black;
 
     background-color: white;
-
-@include hover;
   }
 
   &--black {
@@ -34,18 +30,6 @@
   &--brown {
     background-color: rgba(0, 0, 0, 0.4);
   }
-
-  @media(max-width: $desktop-min-width - 1) {
-    padding: 22px 40px 21px;
-
-@include font(15, 17);
-  }
-
-  @media(max-width: $tablet-width - 1) {
-    padding: 16px 30px 14px;
-
-@include font(10, 11);
-  }
 }
 
 .button-navigation {
@@ -55,16 +39,15 @@
 
   vertical-align: middle;
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   background-image: url("../img/svg/button.svg");
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid white;
   border-radius: 50%;
 
-@include font(0, 0);
-
-@include not-hover;
+  @include font(0, 0);
+  @include hover;
 
   &--prev {
     transform: rotate(180deg);
@@ -73,8 +56,6 @@
   &:hover,
   &:focus {
     background-color: rgba(0, 0, 0, 0.6);
-
-@include hover;
   }
 
   &:active {
@@ -82,3 +63,18 @@
   }
 }
 
+@media (max-width: $desktop-min-width) {
+  .button {
+    padding: 22px 40px 21px;
+
+    @include font(15, 17);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .button {
+    padding: 16px 30px 14px;
+
+    @include font(10, 11);
+  }
+}

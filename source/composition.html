@@ -2,70 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Флористика с душой</title>
-    <link rel="stylesheet" href="css/style.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Флористика с душой</title>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class="wrapper">
-    <include src="source/components/page-header.html"></include>
-    <main class="service">
-        <div class="service__main-img">
-            <img src="img/composition/composition1-desktop@1x.jpg" width="996" height="1080"
-                srcset="img/composition/composition1-desktop@1x.jpg 1x, img/composition/composition1-desktop@2x.jpg 2x"
-                alt="Цветочная композиция">
-        </div>
+  <include src="source/components/page-header.html"></include>
+  <main class="service" data-chapter="composition">
+    <div class="service__main-img">
+      <img src="img/composition/composition1-desktop@2x.jpg" width="996" height="1080" alt="Цветочная композиция">
+    </div>
 
-        <div class="service__container">
-            <h1 class="title title--main">Букеты на&nbsp;мероприятия</h1>
-            <p>
-                У нас есть огромное разноообразие букетов на любое событие.
-                Вы сможете приобрести как нежный букет, так и яркий, а также мужские, круглые, вертикалье,
-                веерообразные,
-                букеты-зонтики, букеты в вегетативной технике и много других экзотических видов.
-            </p>
-            <button type="button" class="button">Заказать</button>
-            <div class="service__gallery">
-                <img src="img/composition/composition2-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition2-desktop@1x.jpg 1x, img/composition/composition2-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition3-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition3-desktop@1x.jpg 1x, img/composition/composition3-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition4-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition4-desktop@1x.jpg 1x, img/composition/composition4-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition5-desktop@5x.jpg" width="123" height="123"
-                    srcset="img/composition/composition5-desktop@1x.jpg 1x, img/composition/composition5-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition6-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition6-desktop@1x.jpg 1x, img/composition/composition6-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition7-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition7-desktop@1x.jpg 1x, img/composition/composition7-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition8-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition8-desktop@1x.jpg 1x, img/composition/composition8-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-                <img src="img/composition/composition9-desktop@1x.jpg" width="123" height="123"
-                    srcset="img/composition/composition9-desktop@1x.jpg 1x, img/composition/composition9-desktop@2x.jpg 2x"
-                    alt="Цветочная композиция">
-            </div>
-            <p class="service__link">Больше фотографий в профиле
-                <a href="#">
-                    <svg width="16" height="16">
-                        <use xlink:href="img/sprite.svg#icon-inst"></use>
-                    </svg>
-                    Инстаграм
-                </a>
-            </p>
+    <div class="service__container">
+      <h1 class="title title--main">Kомпозиции и&nbsp;шляпные коробки</h1>
+      <p>
+        Композиции могут собираться в&nbsp;любой таре: корзинке, шляпной коробке, вазочке или декоративных ящиках.
+        Их&nbsp;нет
+        необходимости ставить в&nbsp;вазу, как букеты, потому что цветы питаются при помощи специальной флористической
+        губки
+        под
+        названием оазис.
+        Композиции очень удобные для подарка, или оформления мероприятия.
+      </p>
+      <button type="button" class="button" id="order">Заказать</button>
+      <div class="service__swiper-container">
+        <div class="service__gallery swiper-container">
+          <div class="service__gallery-container swiper-wrapper">
+            <img class="service__gallery-item  swiper-slide" src="img/composition/composition2-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition2-desktop@1x.jpg 1x, img/composition/composition2-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item service__gallery-item--1 swiper-slide"
+              src="img/composition/composition3-desktop@1x.jpg" width="123" height="123"
+              srcset="img/composition/composition3-desktop@1x.jpg 1x, img/composition/composition3-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition4-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition4-desktop@1x.jpg 1x, img/composition/composition4-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition5-desktop@5x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition5-desktop@1x.jpg 1x, img/composition/composition5-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition6-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition6-desktop@1x.jpg 1x, img/composition/composition6-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition7-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition7-desktop@1x.jpg 1x, img/composition/composition7-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition8-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition8-desktop@1x.jpg 1x, img/composition/composition8-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+            <img class="service__gallery-item swiper-slide" src="img/composition/composition9-desktop@1x.jpg"
+              width="123" height="123"
+              srcset="img/composition/composition9-desktop@1x.jpg 1x, img/composition/composition9-desktop@2x.jpg 2x"
+              alt="Цветочная композиция" tabindex="0">
+          </div>
         </div>
+        <button class="button-navigation button-navigation--prev swiper-button-prev">Назад</button>
+        <button class="button-navigation button-navigation--next swiper-button-next">Вперед</button>
+      </div>
 
-    </main>
-    <include src="source/components/page-footer.html"></include>
-    <script src="./main.js"></script>
+      <p class="service__link">Больше фотографий в профиле
+        <a href="#">
+          <svg width="16" height="16">
+            <use xlink:href="img/sprite.svg#icon-inst"></use>
+          </svg>
+          Инстаграм
+        </a>
+      </p>
+    </div>
+
+  </main>
+  <include src="source/components/page-footer.html"></include>
+  <include src="source/components/form.html"></include>
+  <script src="./main.js"></script>
 </body>
 
 </html>

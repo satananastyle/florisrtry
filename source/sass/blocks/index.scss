@@ -16,16 +16,11 @@
 
   opacity: 0.5;
 
-@include font(35, 39);
-
-@include not-hover;
+  @include font(35, 39);
+  @include hover;
 
   &:hover,
   &:focus {
     opacity: 1;
-
-@include hover;
-
-@include font(45, 50);
   }
 }

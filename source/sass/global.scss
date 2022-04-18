@@ -105,3 +105,11 @@ input:invalid {
   margin: 0 auto;
   padding: 0 205px;
 }
+
+.modal-opened {
+  position: fixed;
+  right: 0;
+  left: 0;
+
+  overflow: hidden;
+}

@@ -1,0 +1,257 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.modal__wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: stretch;
+  width: 716px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  background-color: $background;
+
+  form {
+    padding: 45px 66px;
+
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 48px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  label:last-of-type {
+    margin-bottom: 22px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 14px 21px;
+
+    font-size: 14px;
+    line-height: 15px;
+    color: white;
+    letter-spacing: -0.01em;
+
+    background-color: transparent;
+    border: 1px solid rgba(246, 246, 249, 0.2);
+
+    @include hover;
+  }
+
+  input:hover,
+  input:focus {
+    border-color: white;
+  }
+
+  ::-webkit-input-placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: "Forum";
+    color: white;
+    letter-spacing: -0.01em;
+  }
+
+  ::-moz-placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: "Forum";
+    color: white;
+    letter-spacing: -0.01em;
+  }
+
+  :-ms-input-placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: "Forum";
+    color: white;
+    letter-spacing: -0.01em;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+
+  button[type="button"] {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+
+    width: 22px;
+    height: 22px;
+
+    font-size: 0;
+    line-height: 0;
+
+    background-color: transparent;
+    background-image: url("../img/svg/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+
+    @include hover;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (max-width: $desktop-min-width) {
+  .modal__wrapper {
+    width: 464px;
+
+    img {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: 70px;
+
+      font-size: 30px;
+      line-height: 43px;
+    }
+
+    form {
+      padding: 100px 45px 85px;
+    }
+
+    label {
+      margin-bottom: 25px;
+    }
+
+    label:last-of-type {
+      margin-bottom: 41px;
+    }
+
+    input {
+      padding: 20px 32px;
+
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    ::-webkit-input-placeholder {
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    ::-moz-placeholder {
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    :-ms-input-placeholder {
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    button[type="button"] {
+      top: 40px;
+      right: 40px;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .modal__wrapper {
+    width: 288px;
+
+    h2 {
+      margin-bottom: 45px;
+
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.09em;
+    }
+
+    form {
+      padding: 57px 20px 52px;
+    }
+    label {
+      margin-bottom: 16px;
+    }
+
+    label:last-of-type {
+      margin-bottom: 27px;
+    }
+
+    input {
+      padding: 15px 21px;
+
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    ::-webkit-input-placeholder {
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    ::-moz-placeholder {
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    :-ms-input-placeholder {
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    button[type="button"] {
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

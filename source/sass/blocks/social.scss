@@ -8,17 +8,12 @@
 
   list-style: none;
 
-  @media(max-width: $desktop-min-width - 1) {
-    z-index: 0;
+  li {
+    margin-bottom: 18px;
 
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 35px;
-  }
-
-  @media(max-width: $tablet-width - 1) {
-    margin-bottom: 29px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--footer {
@@ -28,16 +23,53 @@
     li:not(:last-child) {
       margin-right: 50px;
     }
-
-    @media(max-width: $desktop-min-width - 1) {
-      width: fit-content;
-    }
   }
 
-  li {
-    margin-bottom: 18px;
+  svg {
+    transition: 0.3s;
 
-    @media(max-width: $desktop-min-width - 1) {
+    fill: white;
+    stroke: white;
+  }
+
+  a {
+    display: inline-block;
+
+    border-radius: 4px;
+
+    @include font(0, 0);
+    @include hover;
+
+    &:not(.social-whatsapp) {
+      border: 1px solid white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: white;
+
+      svg {
+        fill: $background;
+        stroke: $background;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-min-width) {
+  .social {
+    z-index: 0;
+
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &--footer {
+      width: fit-content;
+    }
+
+    li {
       display: inline-block;
       width: 55px;
       height: 55px;
@@ -51,52 +83,21 @@
       border-radius: 50%;
     }
 
-    @media(max-width: $tablet-width - 1) {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .social {
+    margin-bottom: 15px;
+
+    li {
       width: 35px;
       height: 35px;
       padding: 8px;
-    }
-
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-    display: inline-block;
-
-    border-radius: 4px;
-
-    @include font(0, 0);
-    @include not-hover;
-
-    &:not(.social-whatsapp) {
-      border: 1px solid white;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: white;
-
-      @include hover;
-
-      svg {
-        fill: $background;
-        stroke: $background;
-      }
-    }
-  }
-
-  svg {
-    transition: 0.3s;
-
-    fill: white;
-    stroke: white;
-
-    @media(max-width: $tablet-width - 1) {
-      width: 18px;
-      height: 18px;
     }
   }
 }
