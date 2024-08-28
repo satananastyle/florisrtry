@@ -27,7 +27,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-htmlacademy": "^0.1.4",
     "swiper": "6.3.2",
-    "webpack": "4.44.2",
+    "webpack": "5.94.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
     "webpack-stream": "6.1.0"
